@@ -31,6 +31,18 @@ describe("Karaoke App", () => {
           .arrayPosition
       ).toEqual(0);
     });
+
+    it("Should update state when API lyrics are being requested.", () => {
+      const action = actions.requestSong("crocodile rock");
+      const newStateEntry = {
+        isFetching: true,
+        title: action.title,
+        songId: action.songId
+      };
+      expect(
+        lyricChangeReducer(initialState.songsById, action)[action.songId]
+      ).toEqual(newStateEntry);
+    });
   });
 
   describe("songChangeReducer", () => {
