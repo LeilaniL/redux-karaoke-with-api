@@ -1,15 +1,21 @@
-import React from 'react';
-import SongDisplay from './SongDisplay';
-import SongList from './SongList';
-import Header from './Header';
+import React from "react";
+import SongDisplay from "./SongDisplay";
+import SongList from "./SongList";
+import Header from "./Header";
 
-function App(){
+const styles = {
+  fontFamily: "Helvetica, sans-serif",
+  color: "navy",
+  backgroundColor: "#1fcecb",
+  padding: "20px"
+};
+function App() {
   return (
-    <div>
+    <div style={styles}>
       <Header />
-      <br/>
+      <br />
       <SongList />
-      <hr/>
+      <hr />
       <SongDisplay />
     </div>
   );
